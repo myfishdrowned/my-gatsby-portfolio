@@ -6,46 +6,17 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+    <Header />
+    <main className="flex-1 w-full max-w-5xl mx-auto px-4 py-8">{children}</main>
+    <footer className="text-center text-gray-500 py-6 border-t border-gray-800 text-sm">
+      © {new Date().getFullYear()} &middot; Built with <a href="https://www.gatsbyjs.com" className="text-indigo-400 hover:underline">Gatsby</a>
+    </footer>
+  </div>
+)
 
 export default Layout

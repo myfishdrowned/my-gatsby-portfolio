@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "framer-motion": "^12.23.0",
     "gatsby": "^5.14.1",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-manifest": "^5.14.0",
@@ -15,7 +16,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "prettier": "^2.8.8"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "prettier": "^2.8.8",
+    "tailwindcss": "^4.1.11"
   },
   "keywords": [
     "gatsby"
